@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таблиця лідерів</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 50%;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Таблиця лідерів</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Ім'я</th>
+                <th>Кількість правильних відповідей</th>
+            </tr>
+        </thead>
+        <tbody id="leaderboard">
+            <!-- Дані будуть додані через скрипт -->
+        </tbody>
+    </table>
+    <a href="https://t.me/zaputyn_bot" class="button">Перейти до бота</a>
+    <script>
+        // Приклад даних, які можна оновити через бекенд
+        const leaderboardData = [
+            { username: "Олександр", score: 10 },
+            { username: "Марія", score: 8 },
+            { username: "Іван", score: 6 }
+        ];
+
+        const leaderboardTable = document.getElementById("leaderboard");
+        leaderboardData.forEach(entry => {
+            const row = document.createElement("tr");
+            row.innerHTML = `<td>${entry.username}</td><td>${entry.score}</td>`;
+            leaderboardTable.appendChild(row);
+        });
+    </script>
+</body>
+</html>
